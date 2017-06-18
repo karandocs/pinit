@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @framework.name
+p
+  strong Active:
+  = @framework.active
+p
+  strong Position:
+  = @framework.position
+
+= link_to 'Edit', edit_framework_path(@framework)
+'  |
+= link_to 'Back', frameworks_path

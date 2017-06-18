@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @topic.name
+p
+  strong Framework:
+  = @topic.framework
+p
+  strong Description:
+  = @topic.description
+
+= link_to 'Edit', edit_topic_path(@topic)
+'  |
+= link_to 'Back', topics_path

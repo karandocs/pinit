@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Text:
+  = @tip.text
+p
+  strong Note:
+  = @tip.note
+p
+  strong Name:
+  = @tip.name
+
+= link_to 'Edit', edit_tip_path(@tip)
+'  |
+= link_to 'Back', tips_path
