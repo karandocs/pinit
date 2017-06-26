@@ -1,6 +1,6 @@
 h1 Listing notes
 
-table
+table.table
   thead
     tr
       th Name
@@ -16,10 +16,10 @@ table
         td = note.name
         td = note.details
         td = note.topic
-        td = link_to 'Show', note
-        td = link_to 'Edit', edit_note_path(note)
-        td = link_to 'Destroy', note, data: { confirm: 'Are you sure?' }, method: :delete
+        td = link_to 'Show', framework_topic_note_path(@topic.framework.id, @topic.id, note)
+        td = link_to 'Edit', edit_framework_topic_note_path(@topic.framework.id, @topic.id, note)
+        td = link_to 'Destroy', framework_topic_note_path(@topic.framework.id, @topic.id, note), data: { confirm: 'Are you sure?' }, method: :delete
 
 br
 
-= link_to 'New Note', new_note_path
+= link_to 'New Note', new_framework_topic_note_path(@topic.framework.id, @topic.id)

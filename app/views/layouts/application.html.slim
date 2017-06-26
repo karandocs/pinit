@@ -7,7 +7,7 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    #wrapper
+    #wrapper.toggled
       /! Sidebar
       #sidebar-wrapper
         ul.sidebar-nav
@@ -16,7 +16,7 @@ html
               | Pin-it
           - Framework.all.each do |framework|
             li
-              a href="#"  #{framework.name}
+              = link_to framework.name, framework_path(framework)
 
       #page-content-wrapper
         = yield

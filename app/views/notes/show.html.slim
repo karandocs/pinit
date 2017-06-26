@@ -1,14 +1,22 @@
 p#notice = notice
-
+h2 = @note.topic.name
 p
   strong Name:
   = @note.name
 p
   strong Details:
   = @note.details
-p
-  strong Topic:
-  = @note.topic
+
+- @note.tips.each do |tip|
+  = tip.name
+  br
+  = tip.text
+  br
+= simple_form_for Tip.new do |f|
+  = f.input :text
+  = f.input :note_id, as: :hidden, input_html:{value: @note.id}
+  = f.input :name
+  = f.submit
 
 = link_to 'Edit', edit_note_path(@note)
 '  |

@@ -1,15 +1,22 @@
 p#notice = notice
 
-p
-  strong Name:
+h2
   = @topic.name
 p
-  strong Framework:
-  = @topic.framework
-p
-  strong Description:
   = @topic.description
 
+- @topic.notes.each do |note|
+  = link_to note.name, framework_topic_note_path(@topic.framework.id, @topic.id, note)
+  br
+= simple_form_for Note.new do |f|
+    = f.input :name
+    = f.input :details
+    = f.input :topic_id, as: :hidden, input_html: {value: @topic.id}
+    = f.submit
+
+br
+= link_to 'New Note', new_framework_topic_note_path(@topic.framework.id, @topic.id)
+br
 = link_to 'Edit', edit_topic_path(@topic)
 '  |
 = link_to 'Back', topics_path

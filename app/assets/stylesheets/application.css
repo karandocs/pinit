@@ -17,3 +17,10 @@
 body{
   margin: 0px;
 }
+
+#menu-toggle{
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+}
