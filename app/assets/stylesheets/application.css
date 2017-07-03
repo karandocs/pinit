@@ -24,3 +24,16 @@ body{
   left: 20px;
   z-index: 999;
 }
+
+.mt10{
+  margin-top: 10px
+}
+.p10{
+  padding: 10px
+}
+.p30{
+  padding: 30px
+}
+.panel-black{
+  border-color: lightgray
+}

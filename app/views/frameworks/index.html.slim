@@ -3,4 +3,11 @@
     .col-lg-12
       h1 Simple Sidebar
       p This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.
-      
+
+    .panel.col-md-4.panel-success
+      h3 New framework
+      = simple_form_for Framework.new do |f|
+        = f.input :name
+        = f.input :active
+        = f.input :position
+        .actions = f.submit

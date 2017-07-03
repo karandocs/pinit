@@ -1,6 +1,6 @@
 p#notice = notice
 - @framework.topics.each do |topic|
   h2
-    = link_to topic.name, framework_topic_path(topic)
+    = link_to topic.name, framework_topic_path(@framework, topic)
   br
 = link_to 'new topic', new_framework_topic_path(@framework.id), class:"btn btn-primary"

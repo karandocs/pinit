@@ -6,7 +6,7 @@ p
   = @topic.description
 
 - @topic.notes.each do |note|
-  = link_to note.name, framework_topic_note_path(@topic.framework.id, @topic.id, note)
+  h3 = link_to note.name, framework_topic_note_path(@topic.framework.id, @topic.id, note)
   br
 = simple_form_for Note.new do |f|
     = f.input :name

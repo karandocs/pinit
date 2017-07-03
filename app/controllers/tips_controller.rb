@@ -25,10 +25,15 @@ class TipsController < ApplicationController
   # POST /tips.json
   def create
     @tip = Tip.new(tip_params)
-
     respond_to do |format|
       if @tip.save
-        format.html { redirect_to @tip, notice: 'Tip was successfully created.' }
+        if params[:tip][:picture].present?
+          pictures = params[:tip][:picture]
+          pictures.each do |picture|
+            @tip.pictures.create(picture: picture)
+          end
+        end
+        format.html { redirect_to :back, notice: 'Tip was successfully created.' }
         format.json { render :show, status: :created, location: @tip }
       else
         format.html { render :new }
