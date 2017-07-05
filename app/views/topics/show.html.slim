@@ -1,22 +1,24 @@
-p#notice = notice
+.row
+  .col-md-12
+    p#notice = notice
 
-h2
-  = @topic.name
-p
-  = @topic.description
+    h2
+      = @topic.name
+    p
+      = @topic.description
+.row
+  - @topic.notes.each do |note|
+    .col-md-4
+      .panel.panel-black.panel-bg
+        .p30
+          h3 = link_to note.name, framework_topic_note_path(@topic.framework.id, @topic.id, note)
+          p = note.details
+.row
+  .col-md-12
+    = simple_form_for Note.new do |f|
+        = f.input :name
+        = f.input :details
+        = f.input :topic_id, as: :hidden, input_html: {value: @topic.id}
+        = f.submit
 
-- @topic.notes.each do |note|
-  h3 = link_to note.name, framework_topic_note_path(@topic.framework.id, @topic.id, note)
-  br
-= simple_form_for Note.new do |f|
-    = f.input :name
-    = f.input :details
-    = f.input :topic_id, as: :hidden, input_html: {value: @topic.id}
-    = f.submit
-
-br
-= link_to 'New Note', new_framework_topic_note_path(@topic.framework.id, @topic.id)
-br
-= link_to 'Edit', edit_topic_path(@topic)
-'  |
-= link_to 'Back', topics_path
+    

@@ -14,10 +14,21 @@
  *= require_self
  */
 
+a:hover{
+  text-decoration: none !important;
+  background-color: transparent;
+  color: inherit;
+}
 body{
   margin: 0px;
 }
 
+.mb30{
+  margin-bottom: 30px
+}
+.panel-bg{
+  background-color: #eee
+}
 #menu-toggle{
   position: fixed;
   top: 20px;
