@@ -33,7 +33,7 @@ class TipsController < ApplicationController
             @tip.pictures.create(picture: picture)
           end
         end
-        format.html { redirect_to :back, notice: 'Tip was successfully created.' }
+        format.html { redirect_to framework_topic_note_path(@tip.note.topic.framework.id,@tip.note.topic.id, @tip.note.id), notice: 'Tip was successfully created.' }
         format.json { render :show, status: :created, location: @tip }
       else
         format.html { render :new }
