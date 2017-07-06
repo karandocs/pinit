@@ -9,12 +9,14 @@ $(document).on 'swipeleft', '#page-content-wrapper', () ->
   return
 
 
-$(document).on 'click touchstart', '.nav-show', () ->
+$(document).on 'click touchstart', '.nav-show', (e) ->
+  e.preventDefault()
   $('#sidebar-wrapper').removeClass('hide-mob')
   $('#sidebar-wrapper').fadeIn(3000)
   return
 
-$(document).on 'click touchstart', '.nav-hide', () ->
+$(document).on 'click touchstart', '.nav-hide', (e) ->
+  e.preventDefault()
   $('#sidebar-wrapper').fadeOut(3000)
   $('#sidebar-wrapper').addClass('hide-mob')
   return
