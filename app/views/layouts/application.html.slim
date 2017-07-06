@@ -2,6 +2,7 @@ doctype html
 html
   head
     meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    meta name="viewport" content=("width=device-width,initial-scale=1")
     title Pinit
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -9,7 +10,7 @@ html
   body
     #wrapper.toggled
       /! Sidebar
-      #sidebar-wrapper
+      #sidebar-wrapper.hide-mob
         ul.sidebar-nav
           li.sidebar-brand
             a href="#"
@@ -19,4 +20,9 @@ html
               = link_to framework.name, framework_path(framework)
 
       #page-content-wrapper
-        = yield
+        .nav-show
+          .bar
+          .bar
+          .bar
+        .nav-hide
+          = yield

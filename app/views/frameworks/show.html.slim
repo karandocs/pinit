@@ -1,6 +1,6 @@
 p#notice = notice
 .row
-  .col-md-12.mb30
+  .col-md-12.mb30.pull-right
     = link_to 'new topic', new_framework_topic_path(@framework.id), class:"btn btn-primary"
 .row
   - @framework.topics.each do |topic|

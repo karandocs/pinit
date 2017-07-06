@@ -12,7 +12,27 @@
     overflow-x: hidden;
  }
 
+ .nav-show {
+   width: 40px;
+   height: 29px;
+   border: 1px solid #a7a6a6;
+   border-radius: 4px;
+   .bar {
+     border: 1px solid #a7a6a6;
+     margin: 5px;
+   }
+ }
+
 /* Toggle Styles */
+@media screen and (max-width: 767px) {
+  .hide-mob {
+    display: none !important;
+  }
+
+  #wrapper.toggled {
+      padding-left: 0px !important;
+  }
+}
 
 #wrapper {
     padding-left: 0;
