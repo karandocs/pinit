@@ -10,11 +10,9 @@ $(document).on 'swipeleft', '#page-content-wrapper', () ->
 
 
 $(document).on 'click touchstart', '.nav-show', (e) ->
-  e.preventDefault()
   $('#sidebar-wrapper').removeClass('hide-mob')
   return
 
 $(document).on 'click touchstart', '.nav-hide', (e) ->
-  e.preventDefault()
   $('#sidebar-wrapper').addClass('hide-mob')
   return
