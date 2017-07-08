@@ -41,6 +41,14 @@ gem 'slim-rails'
 gem 'local_time'
 gem "paperclip"
 gem 'devise'
+gem 'trix'
+
+#html_pipeline
+gem 'html-pipeline', '~> 1.11.0'
+gem 'github-markdown', '~> 0.6.7'
+gem 'gemoji', '~> 2.1.0'
+gem 'sanitize', '~> 3.0.3'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

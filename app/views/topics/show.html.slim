@@ -12,13 +12,11 @@
       .panel.panel-black.panel-bg
         .p30
           h3 = link_to note.name, framework_topic_note_path(@topic.framework.id, @topic.id, note)
-          p = note.details
+          p = raw note.details
 .row
   .col-md-12
     = simple_form_for Note.new do |f|
         = f.input :name
-        = f.input :details
+        = f.trix_editor :details
         = f.input :topic_id, as: :hidden, input_html: {value: @topic.id}
         = f.submit
-
-    
